@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { min-height: 100%; }
+body {
+  @apply bg-ink-950 text-slate-100 font-sans antialiased;
+  background-image:
+    radial-gradient(900px 500px at 85% -10%, rgba(139,92,246,.18), transparent 60%),
+    radial-gradient(700px 400px at -10% 10%, rgba(198,244,50,.08), transparent 60%);
+  background-attachment: fixed;
+}
+:focus-visible { outline: 2px solid #c6f432; outline-offset: 2px; border-radius: 8px; }
+.card { @apply rounded-3xl border border-white/[0.07] bg-ink-800/70 backdrop-blur p-5; }
+.chip { @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:bg-white/10; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition active:scale-[.98] disabled:opacity-40 disabled:cursor-not-allowed; }
+.btn-primary { @apply btn bg-lime-400 text-ink-950 hover:bg-lime-500; }
+.btn-ghost { @apply btn border border-white/10 bg-white/5 text-slate-100 hover:bg-white/10; }
+.input { @apply w-full rounded-2xl border border-white/10 bg-ink-900 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500; }
+.label { @apply mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400; }
+.num { @apply font-display tabular-nums; }
+input[type=range] { accent-color: #c6f432; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
